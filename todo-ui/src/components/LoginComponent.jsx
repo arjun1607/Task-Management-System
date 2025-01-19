@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  logjnAPICall,
+  loginAPICall,
   saveLoggedInUser,
   storeToken,
 } from "../services/AuthService";
@@ -14,7 +14,7 @@ const LoginComponent = () => {
   function handleLoginForm(e) {
     e.preventDefault();
 
-    logjnAPICall(username, password)
+    loginAPICall(username, password)
       .then((response) => {
         console.log(response.data);
 
