@@ -18,10 +18,13 @@ const LoginComponent = () => {
       .then((response) => {
         console.log(response.data);
 
-        const token = "Basic " + window.btoa(username + ":" + password);
+        // const token = "Basic " + window.btoa(username + ":" + password);
+        const token = "Bearer " + response.data.accessToken;
         storeToken(token);
 
-        saveLoggedInUser(username);
+        const role = response.data.role;
+
+        saveLoggedInUser(username, role);
         navigator("/todos");
 
         window.location.reload(false);
