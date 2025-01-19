@@ -13,6 +13,9 @@ function App() {
       <BrowserRouter>
         <HeaderComponent />
         <Routes>
+          {/* // http://localhost:3000 */}
+          <Route path="/" element={<LoginComponent />}></Route>
+
           <Route path="/login" element={<LoginComponent />}></Route>
 
           <Route path="/register" element={<RegisterComponent />}></Route>
@@ -20,8 +23,6 @@ function App() {
           <Route path="/update-todo/:id" element={<TodoComponent />}></Route>
           {/* // http://localhost:3000/add-todo */}
           <Route path="/add-todo" element={<TodoComponent />}></Route>
-          {/* // http://localhost:3000 */}
-          <Route path="/" element={<ListTodoComponent />}></Route>
           {/* // http://localhost:3000/todos */}
           <Route path="/todos" element={<ListTodoComponent />}></Route>
         </Routes>
